@@ -2,13 +2,14 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Operacion;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RequestMapping("/api")
 public class CalculadoraAvzController {
 
-    @PostMapping(name = "ops")
+    @PostMapping("ops")
     public Operacion operaciones(@RequestParam(name = "operacion") Operacion operacion) {
 
         switch  (operacion.getOp()) {
